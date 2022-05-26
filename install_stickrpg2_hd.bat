@@ -102,4 +102,4 @@ del "Stick RPG 2 Director's Cut.exe"
 copy /b flashplayer_patched.exe + "Zinc Shell Mac.swf" + "%PATCH%\finalize.hex" "Stick RPG 2 Director's Cut.exe"
 
 echo Done! Press any key to exit.
-pause
+pause>nul
