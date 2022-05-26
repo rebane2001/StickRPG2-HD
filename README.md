@@ -18,6 +18,7 @@ StickRPG2-HD requires **Windows 10 or higher** from 2019 or later. HOWEVER, if y
 
 - The fullscreen button in the settings no longer works. Instead you can just press ctrl+f to go fullscreen and esc to go back.
 - The quit game button doesn't work, but you can just close the game from the `x` or press alt+f4.
+- Since rendering the game in a higher resolution is more demanding (especially so with Flash), the game may lag on weaker hardware.
 
 ## HD Textures
 While most of the Stick RPG 2 assets have been kept original for authenticity, some have been remade or upscaled to a higher resolution.
