@@ -1,0 +1,8 @@
+Start off with flashplayer_32_sa.exe (shasum 7736efc1c76e6a80132a22e1f9fc87a5884fa375).
+
+Get Resource Hacker from http://www.angusj.com/resourcehacker/resource_hacker.zip (I used version 5.1.8 (360)) and put the exe in the same folder, then run replace_icon.bat.
+
+Run patch_title.sh through WSL bash.
+
+Create delta patch with xdelta3-3.1.0-x86_64.exe:
+xdelta3-3.1.0-x86_64.exe -e -s flashplayer_32_sa.exe flash_patched.exe projector.patch
