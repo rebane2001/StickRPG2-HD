@@ -32,6 +32,10 @@ IF NOT EXIST original.exe (
     echo Creating a backup of the original game as original.exe
     copy "Stick RPG 2 Director's Cut.exe" "original.exe"
 )
+rem Reset the main file and SWFs just in case we need to reinstall
+del *.swf
+del "Stick RPG 2 Director's Cut.exe"
+copy "original.exe" "Stick RPG 2 Director's Cut.exe"
 
 echo Downloading required files...
 
