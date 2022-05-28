@@ -21,8 +21,18 @@ I have tested this mod both on the **Steam Deck (Linux)** and the **M1 MacBook A
 - The fullscreen button in the settings no longer works. Instead you can just press ctrl+f to go fullscreen and esc to go back.
 - The quit game button doesn't work, but you can just close the game from the `x` or press alt+f4.
 - Since rendering the game in a higher resolution is more demanding (especially so with Flash), the game may lag on weaker hardware.
-- Save location is different from default. This means you'll "lose" your local saves, but you can still get them back by going back to the original version.
 - On macOS, entering and leaving buildings can cause the game to freeze for a couple seconds sometimes.
+
+## Saves
+
+The installer attempts to automatically link your old saves with the HD version saves so your saves should be the same no matter which version of the game you play. However, if for example copying this game to a different device without using the installer, you'll need to manage your saves manually, so here are the paths:
+
+- The default (unmodded) save location: `C:\Users\USERNAME\AppData\Roaming\Macromedia\Flash Player\#SharedObjects\RANDOM\localhost\Program Files (x86)\Steam\steamapps\common\Minigames.swf\srpg2Save.sol`
+- The HD mod save location: `C:\Users\USERNAME\AppData\Roaming\Macromedia\Flash Player\#SharedObjects\RANDOM\localhost\Program Files (x86)\Steam\steamapps\common\Stick RPG 2\Minigames.swf\srpg2Save.sol`
+
+The `USERNAME` in the path is your Windows username, and the `RANDOM` is just some random characters. The path will differ if you've installed the game in a different location, so you'll need to change the paths accordingly. The installer should automatically find the right path though.
+
+The online save functionality works in the HD mod without any changes.
 
 ## HD Textures
 While most of the Stick RPG 2 assets have been kept original for authenticity, some have been remade or upscaled to a higher resolution.
