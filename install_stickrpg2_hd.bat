@@ -99,7 +99,7 @@ xdelta3-3.1.0-x86_64.exe -d -s Minigames_original.swf "%PATCH%\Minigames.swf.tex
 
 echo Creating final HD exe...
 del "Stick RPG 2 Director's Cut.exe"
-copy /b flashplayer_patched.exe + "Zinc Shell Mac.swf` + "%PATCH%\finalize.hex" "Stick RPG 2 Director's Cut.exe"
+copy /b flashplayer_patched.exe + "Zinc Shell Mac.swf" + "%PATCH%\finalize.hex" "Stick RPG 2 Director's Cut.exe"
 
 echo Linking saves...
 for /d %%D in ("%APPDATA%\Macromedia\Flash Player\#SharedObjects\*") do (
