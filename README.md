@@ -22,6 +22,7 @@ I have tested this mod both on the **Steam Deck (Linux)** and the **M1 MacBook A
 - The quit game button doesn't work, but you can just close the game from the `x` or press alt+f4.
 - Since rendering the game in a higher resolution is more demanding (especially so with Flash), the game may lag on weaker hardware.
 - Save location is different from default. This means you'll "lose" your local saves, but you can still get them back by going back to the original version.
+- On macOS, entering and leaving buildings can cause the game to freeze for a couple seconds sometimes.
 
 ## HD Textures
 While most of the Stick RPG 2 assets have been kept original for authenticity, some have been remade or upscaled to a higher resolution.
