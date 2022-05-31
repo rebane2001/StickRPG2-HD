@@ -40,3 +40,34 @@ While most of the Stick RPG 2 assets have been kept original for authenticity, s
 You can find the source files for the custom textures in the hd_assets folder of this repo, where the `new/` and `proj/` subfolders contain manually remade art and `upsies/` contains textures upscaled with AI.
 
 These textures are automatically installed with the mod installer, but if you'd like to disable all custom textures you can replace find the `dat_original.swf` and `Minigames_original.swf` files in the game install directory, which can be used to replace the modified swf files to restore the original textures.
+
+## How does it work?
+
+The script roughly follows this series of steps:
+1. Launch Stick RPG 2 through Steam.
+2. Find the running process to find the path of the game.
+3. Backup the game.
+4. Download and verify flash player and xdelta.
+5. Set the TMP env variable (local scope) to a custom path and launch the game with it. This drops us some useful game files.
+6. Close the game and reset the TMP env variable.
+7. Rearrange the dropped files to a structure that Stick RPG 2 requires:
+   - Combat XMLs go in `data/combat/`.
+   - racer-attributes.txt and srpg2 XMLs go in `data/`.
+   - maps (`.dat` files) go in `maps/559/` (559 is the map version number).
+   - Other files are left as-is in the root directory.
+8. Patch the flash player using the included xdelta patch file:
+   - The patch file was generated using the tools in `tools/projector_patcher/`, more info is available in `info.txt` but essentially:
+     - Use Resource Hacker to change the icon from the Flash logo to the Stick RPG 2 logo.
+     - Change the window title with a simple `sed`.
+     - Use xdelta to save the patch file so the installer does not need sed nor Resource Hacker.
+9. Create backup copies of `dat.swf` and `Minigames.swf`, then patch them with xdelta:
+   - The patched SWFs were created with the [JPEXS library](https://github.com/jindrapetrik/jpexs-decompiler) and the Java code in `tools/swf_patcher/`, to create your own patch:
+     - Put your SWFs in `swfs/`, also create folders called `img/`, `out/`, and `hd_assets/`.
+     - Run the exportAllImages function from the Java code (uncomment it).
+     - Get the original images from the `img/` directory, and put your modified images in `hd_assets/[SWF_NAME]/new/`.
+     - Run the importAllImages function from the Java code.
+     - You'll find the modified SWFs in the `out/` folder, use xdelta to create patches for them.
+10. Create the final `Stick RPG 2 Director's Cut.exe` file by appending `Zinc Shell Mac.swf` and `patches/finalize.hex` to the patched flash player.
+    - The `finalize.hex` file starts with the maigc hex `56 34 12 FA`. Then the size of the swf is written as a 4-byte little-endian value, eg `81342` becomes `BE 3D 01 00`.
+    - Adding these two things to the exe magically makes it auto-load the swf on startup.
+11. Try to link the save data so that the HD mod and default game version share the same saves.
