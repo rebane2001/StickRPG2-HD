@@ -68,6 +68,6 @@ The script roughly follows this series of steps:
      - Run the importAllImages function from the Java code.
      - You'll find the modified SWFs in the `out/` folder, use xdelta to create patches for them.
 10. Create the final `Stick RPG 2 Director's Cut.exe` file by appending `Zinc Shell Mac.swf` and `patches/finalize.hex` to the patched flash player.
-    - The `finalize.hex` file starts with the maigc hex `56 34 12 FA`. Then the size of the swf is written as a 4-byte little-endian value, eg `81342` becomes `BE 3D 01 00`.
+    - The `finalize.hex` file starts with the magic hex `56 34 12 FA`. Then the size of the swf is written as a 4-byte little-endian value, eg `81342` becomes `BE 3D 01 00`.
     - Adding these two things to the exe magically makes it auto-load the swf on startup.
 11. Try to link the save data so that the HD mod and default game version share the same saves.
