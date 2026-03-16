@@ -11,7 +11,7 @@ StickRPG2-HD is an unofficial HD mod for Stick RPG 2 that unlocks window resizin
 ## Compatibility
 StickRPG2-HD requires **Windows 10 or higher** from 2019 or later. HOWEVER, if you don't have that, there are still two ways to proceed:
 
-1. If you're running an older Windows, you can manually download the [flashplayer_32_sa.exe](https://archive.org/download/flashplayer_32_sa_202107/flashplayer_32_sa.exe) and [xdelta3-3.1.0-x86_64.exe.zip](https://github.com/jmacd/xdelta-gpl/releases/download/v3.1.0/xdelta3-3.1.0-x86_64.exe.zip) files into the same folder the game is installed in, and also unzip the latter. The installer should now work fine.
+1. If you're running an older Windows, you can manually download the [flashplayer_32_sa.exe](https://archive.org/download/adobe-flash-player-32.0.0.465-retail-debug/flashplayer_32_sa.exe) and [xdelta3-3.1.0-x86_64.exe.zip](https://github.com/jmacd/xdelta-gpl/releases/download/v3.1.0/xdelta3-3.1.0-x86_64.exe.zip) files into the same folder the game is installed in, and also unzip the latter. The installer should now work fine.
 2. If you're running an OS that's unsupported altogether, you can install the mod on a Windows 10 computer and then copy the game installation folder over from that computer to the other one. This method also lets you run the HD mod on devices such as the Steam Deck or a Mac.
 
 I have tested this mod both on the **Steam Deck (Linux)** and the **M1 MacBook Air running macOS 12** and Wine, it works on both.
