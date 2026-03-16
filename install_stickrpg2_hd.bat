@@ -12,11 +12,13 @@ timeout /t 5 >nul
 cls
 :start
 echo Looking for Stick RPG 2 instances...
-wmic process where "name='Stick RPG 2 Director\'s Cut.exe'" get ExecutablePath > srpg2hd_temp_path
-for /f "skip=1delims=" %%a in (
- 'type srpg2hd_temp_path'
-) do set "exepath=%%a"&goto next
-:next
+REM wmic process where "name='Stick RPG 2 Director\'s Cut.exe'" get ExecutablePath > srpg2hd_temp_path
+PowerShell Get-Process Stick` RPG` 2` Director`'s` Cut ^| Select-Object -Expand Path > srpg2hd_temp_path
+REM for /f "skip=1delims=" %%a in (
+REM  'type srpg2hd_temp_path'
+REM ) do set "exepath=%%a"&goto next
+REM :next
+set /p exepath= < srpg2hd_temp_path
 del srpg2hd_temp_path
 
 IF ["%exepath%"] == [""] GOTO retry
